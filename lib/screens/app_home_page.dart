@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:school_app/schoolmanagmentapp/Utils/colors.dart';
+import 'package:school_app/Utils/colors.dart';
 
 class AppHomePage extends StatefulWidget {
   const AppHomePage({super.key});
