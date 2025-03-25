@@ -116,15 +116,83 @@ class _AppHomePageState extends State<AppHomePage> {
                 todayclassesitem("09:30", "ریاضی",
                     "assets/images/Profile Image.png", "آقای فلان"),
                 const SizedBox(height: 20),
-                seeAllItems(
-                  "تکالیف امروز",
-                  3,
-                ),
+                seeAllItems("تکالیف امروز", 3),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      yourTaskItems(
+                        Colors.red,
+                        3,
+                        " فیزیک از درس 2 تا 5 امتحان دارید",
+                      ),
+                      yourTaskItems(
+                        Colors.green,
+                        10,
+                        " ریاضی از درس 2 تا 5 امتحان دارید",
+                      ),
+                      yourTaskItems(
+                        Colors.blue,
+                        5,
+                        " علوم از درس 2 تا 5 امتحان دارید",
+                      ),
+                    ],
+                  ),
+                )
               ],
             ),
           ),
         ),
       ],
+    );
+  }
+
+  Container yourTaskItems(Color color, int dayLeft, String courseTitle) {
+    return Container(
+      margin: const EdgeInsets.only(right: 15),
+      padding: const EdgeInsets.all(12),
+      height: 170,
+      width: 170,
+      decoration: BoxDecoration(
+        color: color.withOpacity(0.05),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          const Text(
+            "آخرین مهلت",
+            style: TextStyle(fontSize: 20, color: Colors.black26),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              CircleAvatar(
+                radius: 4,
+                backgroundColor: color,
+              ),
+              const SizedBox(width: 5),
+              Text(
+                "$dayLeft روزشمار",
+                style: const TextStyle(fontSize: 17, color: Colors.black54),
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
+          SizedBox(
+            width: 130,
+            child: Text(
+              courseTitle,
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(
+                  fontSize: 18,
+                  color: Colors.black54,
+                  fontWeight: FontWeight.bold),
+            ),
+          ),
+        ],
+      ),
     );
   }
 

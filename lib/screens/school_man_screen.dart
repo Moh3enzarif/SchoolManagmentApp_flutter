@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:school_app/Utils/colors.dart';
 import 'package:school_app/screens/app_home_page.dart';
+import 'package:school_app/screens/calender.dart';
 
 class SchoolManangmentScreenState extends StatefulWidget {
   const SchoolManangmentScreenState({super.key});
@@ -17,7 +18,7 @@ class _SchoolManangmentScreenStateState
     const AppHomePage(),
     const Scaffold(),
     const Scaffold(),
-    const Scaffold(),
+    const Calendar(),
     const Scaffold(),
   ];
   @override
