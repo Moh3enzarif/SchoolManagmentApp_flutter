@@ -119,6 +119,7 @@ class _AppHomePageState extends State<AppHomePage> {
                 seeAllItems("تکالیف امروز", 3),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
+                  reverse: true,
                   child: Row(
                     children: [
                       yourTaskItems(
@@ -128,12 +129,12 @@ class _AppHomePageState extends State<AppHomePage> {
                       ),
                       yourTaskItems(
                         Colors.green,
-                        10,
+                        5,
                         " ریاضی از درس 2 تا 5 امتحان دارید",
                       ),
                       yourTaskItems(
                         Colors.blue,
-                        5,
+                        10,
                         " علوم از درس 2 تا 5 امتحان دارید",
                       ),
                     ],
